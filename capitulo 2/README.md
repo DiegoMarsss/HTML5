@@ -222,4 +222,4 @@ function supports_input_autofocus() {
   ```
   - Comprueba la existencia del método getItems en el objeto global document.
 
-  ✅ **Listo:** Ya les explique cómo detectar el soporte de características individuales de HTML5 en los navegadores, ya que html no es el unico detectable (canvas, formularios, fotos, videos, geolocalización, etc)
+  ✅ **Listo:** Ya les explique cómo detectar el soporte de características individuales de HTML5 en los navegadores, ya que html no es el unico detectable (canvas, formularios, fotos, videos, geolocalización, etc).
