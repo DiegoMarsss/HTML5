@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Geolocalización</title>
+</head>
+<body>
+    <h1>Tu Ubicación</h1>
+    <p id="location">Cargando...</p>
+    <script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    document.getElementById('location').innerHTML = 
+                        'Latitud: ' + position.coords.latitude + ', Longitud: ' + position.coords.longitude;
+                },
+                function(error) {
+                    document.getElementById('location').innerHTML = 'Error: ' + error.message;
+                }
+            );
+        } else {
+            document.getElementById('location').innerHTML = 'Geolocalización no soportada.';
+        }
+    </script>
+</body>
+</html>
