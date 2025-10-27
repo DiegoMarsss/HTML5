@@ -128,7 +128,8 @@ var watchId = navigator.geolocation.watchPosition(
 
 **Compatibilidad y Librerías:** Funciona en navegadores modernos (Chrome, Firefox, Safari). Para compatibilidad antigua, usa librerías como Modernizr o geo.js.
 
-- Código con Modernizr:
+- Código con Modernizar:
+
 ```JS
 if (Modernizr.geolocation) {
     // Código de geolocalización aquí
