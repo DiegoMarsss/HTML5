@@ -5,7 +5,7 @@ Este capítulo profundiza en la API de Geolocalización de HTML5, una caracterí
 
 ### Conceptos Clave y Código Relacionado:
 
-- Detección de Soporte: Antes de usar la API, verifica si el navegador la soporta, ya que no todos los navegadores antiguos la incluyen.
+- **Detección de Soporte**: Antes de usar la API, verifica si el navegador la soporta, ya que no todos los navegadores antiguos la incluyen.
 
 - Código:
 
