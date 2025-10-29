@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Geolocalización</title>
+</head>
+<body>
+    <h1>Obtener tu Ubicación</h1>
+    <p id="status">Haz clic en un botón para empezar.</p>
+    <button id="getPosition">Obtener Posición Actual</button>
+    <button id="watchPosition">Monitorear Ubicación</button>
+    <button id="stopWatch">Detener Monitoreo</button>
+
+    <script>
+        var watchId;  // Variable para almacenar el ID del monitoreo
+        
+        // Función para obtener la posición actual
+        document.getElementById('getPosition').addEventListener('click', function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        document.getElementById('status').innerHTML = 
+                            'Latitud: ' + position.coords.latitude + '<br>' +
+                            'Longitud: ' + position.coords.longitude + '<br>' +
+                            'Precisión: ' + position.coords.accuracy + ' metros';
+                    },
+                    function(error) {
+                        var mensajeError = 'Error: ';
+                        switch(error.code) {
+                            case error.PERMISSION_DENIED:
+                                mensajeError += 'Usuario denegó el permiso.';
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                mensajeError += 'Posición no disponible.';
+                                break;
+                            case error.TIMEOUT:
+                                mensajeError += 'Tiempo de espera agotado.';
+                                break;
+                            default:
+                                mensajeError += 'Error desconocido.';
+                        }
+                        document.getElementById('status').innerHTML = mensajeError;
+                    },
+                    { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }  // Opciones: alta precisión, timeout 10s, caché 1 min
+                );
+            } else {
+                document.getElementById('status').innerHTML = 'Geolocalización no soportada por tu navegador.';
+            }
+        });
+        
+        // Función para monitorear la ubicación continuamente
+        document.getElementById('watchPosition').addEventListener('click', function() {
+            if (navigator.geolocation) {
+                watchId = navigator.geolocation.watchPosition(
+                    function(position) {
+                        document.getElementById('status').innerHTML = 
+                            'Monitoreando - Latitud: ' + position.coords.latitude + ', Longitud: ' + position.coords.longitude;
+                    },
+                    function(error) {
+                        document.getElementById('status').innerHTML = 'Error en monitoreo: ' + error.message;
+                    },
+                    { enableHighAccuracy: true, timeout: 10000 }
+                );
+            } else {
+                document.getElementById('status').innerHTML = 'Geolocalización no soportada.';
+            }
+        });
+        
+        // Función para detener el monitoreo
+        document.getElementById('stopWatch').addEventListener('click', function() {
+            if (watchId) {
+                navigator.geolocation.clearWatch(watchId);
+                document.getElementById('status').innerHTML = 'Monitoreo detenido.';
+            }
+        });
+    </script>
+</body>
+</html>
