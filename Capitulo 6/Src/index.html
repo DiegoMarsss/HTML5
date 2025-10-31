@@ -15,7 +15,7 @@
     <script>
         var watchId;  // Variable para almacenar el ID del monitoreo
         
-        // Función para obtener la posición actual
+        // Función para ver tu posicion actual 
         document.getElementById('getPosition').addEventListener('click', function() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
@@ -49,7 +49,7 @@
             }
         });
         
-        // Función para monitorear la ubicación continuamente
+        // Función para ver tu ubicacion actual
         document.getElementById('watchPosition').addEventListener('click', function() {
             if (navigator.geolocation) {
                 watchId = navigator.geolocation.watchPosition(
@@ -67,7 +67,7 @@
             }
         });
         
-        // Función para detener el monitoreo
+        // Función para detener tu ubucacion o monitoreo
         document.getElementById('stopWatch').addEventListener('click', function() {
             if (watchId) {
                 navigator.geolocation.clearWatch(watchId);
