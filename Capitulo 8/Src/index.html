@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html 
+    lang="es" 
+    manifest="app.appcache"
+>
+<head>
+    <meta 
+        charset="utf-8"
+    >
+    <title>
+        Bienvenida Offline
+    </title>
+    <style>
+        body { font-family: sans-serif; margin: 30px; }
+        input, button { padding: 8px; margin: 5px; font-size: 16px; }
+        #saludo { margin-top: 20px; font-size: 24px; color: #222; }
+    </style>
+</head>
+<body>
+    <input 
+        id="nombre" 
+        placeholder="Tu nombre" 
+        type="text"
+    >
+    <button 
+        onclick="guardar()"
+    >
+        Guardar
+    </button>
+    <div 
+        id="saludo"
+    >
+    </div>
+    <script 
+        src="script.js"
+    >
+    </script>
+</body>
+</html>
