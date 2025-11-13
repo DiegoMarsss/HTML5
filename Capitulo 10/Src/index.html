@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html 
+    lang="es"
+>
+<head>
+    <meta 
+        charset="UTF-8"
+    >
+    <meta 
+        content="width=device-width, initial-scale=1.0" 
+        name="viewport"
+    >
+    <title>
+        Microdata - Capítulo 10
+    </title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .item { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        .miImage {
+        width: 120px;  
+        height: 120px; 
+     }
+    </style>
+</head>
+<body>
+    <h1>
+        Ejemplo de Microdata
+    </h1>
+    <div 
+        class="item" 
+        itemtype="http://schema.org/Person" 
+        itemscope
+    >
+        <h2>
+            Información de Persona
+        </h2>
+        <span 
+            itemprop="name"
+        >
+            Diego Mars
+        </span>
+        <br>
+        <span 
+            itemprop="jobTitle"
+        >
+            Buen Programador
+        </span>
+        <br>
+        <img 
+            alt="Foto de Diego" 
+            itemprop="imagen" 
+            class ="miImage"
+            src="data:image/jpeg;base64,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"
+        >
+        <br>
+        <a 
+            href="https://developer.mozilla.org/es/docs/Web/HTML" 
+            itemprop="url"
+        >
+            Sitio Web
+        </a>
+        <br>
+        <span 
+            itemprop="email"
+        >
+            dmars@gmail.com
+        </span>
+    </div>
+    <div 
+        class="item" 
+        itemtype="http://schema.org/Event" 
+        itemscope
+    >
+        <h2>
+            Información de Evento
+        </h2>
+        <time 
+            datetime="2023-10-15T10:00" 
+            itemprop="startDate"
+        >
+            26 de noviembre del 2025, 10:00
+        </time>
+        <br>
+        <span 
+            itemprop="location"
+        >
+            Cetis 64, Estado de Mexico
+        </span>
+        <br>
+        <span 
+            itemprop="description"
+        >
+            Una conferencia sobre HTML.
+        </span>
+    </div>
+    <button 
+        id="extractData"
+    >
+        Extraer Datos Microdata
+    </button>
+    <pre 
+        id="output"
+    >
+    </pre>
+    <script>
+        document.getElementById('extractData').addEventListener('click', function() {
+            var output = document.getElementById('output');
+            if (document.getItems) { 
+                var items = document.getItems();  
+                var data = [];
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    var itemData = {
+                        type: item.itemType[0],  
+                        properties: {}
+                    };
+                    var props = item.properties;
+                    for (var prop in props) {
+                        if (props.hasOwnProperty(prop)) {
+                            itemData.properties[prop] = props[prop][0].itemValue || props[prop][0].textContent;
+                        }
+                    }
+                    data.push(itemData);
+                }
+                output.textContent = JSON.stringify(data, null, 2);
+            } else {
+                output.textContent = 'La API de Microdata no está soportada en este navegador.';
+            }
+        });
+    </script>
+</body>
+</html>
