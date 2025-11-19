@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html 
+    lang="es"
+>
+<head>
+    <meta 
+        charset="UTF-8"
+    >
+    <meta 
+        content="width=device-width, initial-scale=1.0" 
+        name="viewport"
+    >
+    <title>
+        Microdata - Capítulo 10
+    </title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .item { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        .miImage {
+        width: 120px;  
+        height: 120px; 
+     }
+    </style>
+</head>
+<body>
+    <h1>
+        Ejemplo de Microdata
+    </h1>
+    <div 
+        class="item" 
+        itemscope 
+        itemtype="http://schema.org/Person"
+    >
+        <h2>
+            Información de Persona
+        </h2>
+        <span 
+            itemprop="name"
+        >
+            Diego Mars
+        </span>
+        <br>
+        <span 
+            itemprop="jobTitle"
+        >
+            Buen Programador
+        </span>
+        <br>
+        <img 
+            alt="Foto de Diego" 
+            class="miImage" 
+            itemprop="imagen" 
+            src="data:image/jpeg;base64,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......(truncated for brevity)..." 
+        >
+        <br>
+        <a 
+            href="https://developer.mozilla.org/es/docs/Web/HTML" 
+            itemprop="url"
+        >
+            Sitio Web
+        </a>
+        <br>
+        <span 
+            itemprop="email"
+        >
+            dmars@gmail.com
+        </span>
+    </div>
+    <div 
+        class="item" 
+        itemscope 
+        itemtype="http://schema.org/Event"
+    >
+        <h2>
+            Información de Evento
+        </h2>
+        <time 
+            datetime="2023-10-15T10:00" 
+            itemprop="startDate"
+        >
+            26 de noviembre del 2025, 10:00
+        </time>
+        <br>
+        <span 
+            itemprop="location"
+        >
+            Cetis 64, Estado de Mexico
+        </span>
+        <br>
+        <span 
+            itemprop="description"
+        >
+            Una conferencia sobre HTML.
+        </span>
+    </div>
+    <button 
+        id="extractData"
+    >
+        Extraer Datos Microdata
+    </button>
+    <pre 
+        id="output"
+    >
+    </pre>
+    <script>
+        document.getElementById('extractData').addEventListener('click', function() {
+            var output = document.getElementById('output');
+            if (document.getItems) { 
+                var items = document.getItems();  
+                var data = [];
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    var itemData = {
+                        type: item.itemType[0],  
+                        properties: {}
+                    };
+                    var props = item.properties;
+                    for (var prop in props) {
+                        if (props.hasOwnProperty(prop)) {
+                            itemData.properties[prop] = props[prop][0].itemValue || props[prop][0].textContent;
+                        }
+                    }
+                    data.push(itemData);
+                }
+                output.textContent = JSON.stringify(data, null, 2);
+            } else {
+                output.textContent = 'La API de Microdata no está soportada en este navegador.';
+            }
+        });
+    </script>
+</body>
+</html>
