@@ -1,51 +1,35 @@
 <!DOCTYPE html>
-<html 
-    lang="es"
->
-<head>
+<html lang="es">
+ <head>
+    <meta charset="UTF-8">
     <meta 
-        charset="UTF-8"
-    >
-    <meta 
-        name="viewport" 
         content="width=device-width, initial-scale=1.0"
+        name="viewport" 
     >
     <title>
         Ejemplo de Almacenamiento Local
     </title>
-</head>
-<body>
+  </head>
+ <body>
     <h1>
         Almacenamiento Local en HTML5
     </h1>
-    <p 
-        id="status"
-    >
+    <p id="status">
         Estado: Esperando acción.
     </p>
-    <button 
-        id="saveLocal"
-    >
+    <button id="saveLocal" > 
         Guardar en localStorage
     </button>
-    <button 
-        id="saveSession"
-    >
+    <button id="saveSession" >
         Guardar en sessionStorage
     </button>
-    <button 
-        id="loadLocal"
-    >
+    <button id="loadLocal">
         Cargar de localStorage
     </button>
-    <button 
-        id="loadSession"
-    >
+    <button id="loadSession">
         Cargar de sessionStorage
     </button>
-    <button 
-        id="clearAll"
-    >
+    <button id="clearAll">
         Limpiar Todo
     </button>
     <script>
@@ -90,5 +74,5 @@
             document.getElementById('status').innerHTML = 'Todo limpiado.';
         });
     </script>
-</body>
+ </body>
 </html>
