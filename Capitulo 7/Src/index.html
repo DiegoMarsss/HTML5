@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+    <meta charset="UTF-8">
+    <meta 
+        content="width=device-width, initial-scale=1.0"
+        name="viewport" 
+    >
+    <title>
+        Ejemplo de Almacenamiento Local
+    </title>
+  </head>
+ <body>
+    <h1>
+        Almacenamiento Local en HTML5
+    </h1>
+    <p id="status">
+        Estado: Esperando acción.
+    </p>
+    <button id="saveLocal" > 
+        Guardar en localStorage
+    </button>
+    <button id="saveSession" >
+        Guardar en sessionStorage
+    </button>
+    <button id="loadLocal">
+        Cargar de localStorage
+    </button>
+    <button id="loadSession">
+        Cargar de sessionStorage
+    </button>
+    <button id="clearAll">
+        Limpiar Todo
+    </button>
+    <script>
+        function supportsLocalStorage() {
+            try {
+                var test = '__test__';
+                localStorage.setItem(test, test);
+                localStorage.removeItem(test);
+                return true;
+            } catch (e) {
+                return false; 
+            }
+        }
+        
+        if (!supportsLocalStorage()) {
+            document.getElementById('status').innerHTML = 'localStorage no soportado. Usa un navegador moderno.';
+        }
+        
+        document.getElementById('saveLocal').addEventListener('click', function() {
+            localStorage.setItem('miClave', 'Valor guardado en localStorage');
+            document.getElementById('status').innerHTML = 'Guardado en localStorage.';
+        });
+        
+        document.getElementById('saveSession').addEventListener('click', function() {
+            sessionStorage.setItem('miClave', 'Valor guardado en sessionStorage');
+            document.getElementById('status').innerHTML = 'Guardado en sessionStorage.';
+        });
+        
+        document.getElementById('loadLocal').addEventListener('click', function() {
+            var valor = localStorage.getItem('miClave');
+            document.getElementById('status').innerHTML = valor ? 'Cargado de localStorage: ' + valor : 'No hay dato en localStorage.';
+        });
+        
+        document.getElementById('loadSession').addEventListener('click', function() {
+            var valor = sessionStorage.getItem('miClave');
+            document.getElementById('status').innerHTML = valor ? 'Cargado de sessionStorage: ' + valor : 'No hay dato en sessionStorage.';
+        });
+        
+        document.getElementById('clearAll').addEventListener('click', function() {
+            localStorage.clear();
+            sessionStorage.clear();
+            document.getElementById('status').innerHTML = 'Todo limpiado.';
+        });
+    </script>
+ </body>
+</html>
